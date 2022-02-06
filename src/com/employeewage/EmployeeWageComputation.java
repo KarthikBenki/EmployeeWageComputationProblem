@@ -6,6 +6,7 @@ public class EmployeeWageComputation {
 	static final int IS_PART_TIME = 2;
 	static final int EMP_RATE_PER_HR = 20;
 	static final int NUM_OF_WORKING_DAYS = 20;
+	static final int TOTAL_WRKNG_HRS = 100;
 	
 	public static int empCheckStatus() {
 		int empWrkHrs = 0;
@@ -36,12 +37,14 @@ public class EmployeeWageComputation {
 
 	public static void main(String[] args) {	
 		int empWrkHrs;
+		int empWrkHrsTotal = 0;
 		int empWagePerDay;
 		int days=0;
 		int empMonthWage = 0;		
-		while(days < NUM_OF_WORKING_DAYS) {
+		while(days < NUM_OF_WORKING_DAYS && empWrkHrsTotal < TOTAL_WRKNG_HRS) {
 			days++;
 			empWrkHrs = empCheckStatus();
+			empWrkHrsTotal+=empWrkHrs;
 			empWagePerDay = empWagePerDayStatus(empWrkHrs);
 			empMonthWage += empWagePerDay;	
 		}
