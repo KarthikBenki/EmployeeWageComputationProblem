@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class EmployeeWageComputation {
 	static final int IS_FULL_TIME = 1;
-
-	public static void main(String[] args) {
+	
+	public static void empCheckStatus() {
 		Random random = new Random();
 		int empCheck = random.nextInt(2);
 		if(empCheck == IS_FULL_TIME) {
@@ -13,8 +13,10 @@ public class EmployeeWageComputation {
 		else {
 			System.out.println("Employee is absent");
 		}
-		
+	}
 
+	public static void main(String[] args) {		
+		empCheckStatus();				
 	}
 
 }
