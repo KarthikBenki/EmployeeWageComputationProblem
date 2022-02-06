@@ -10,15 +10,21 @@ public class EmployeeWageComputation {
 		int empWrkHrs = 0;
 		Random random = new Random();
 		int empCheck = random.nextInt(3);
-		if(empCheck == IS_FULL_TIME) {
+		
+		switch(empCheck) {
+		case IS_FULL_TIME:
 			empWrkHrs = 8;
-		}
-		else if (empCheck == IS_PART_TIME) {
+			break;
+			
+		case IS_PART_TIME:
 			empWrkHrs = 4;
-		}
-		else {
+			break;
+			
+		default:
 			empWrkHrs = 0;
+			break;
 		}
+		
 		return empWrkHrs;
 	}
 	
